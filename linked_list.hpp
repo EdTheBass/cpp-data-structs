@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-#include <vector>
 #define LOG(x) std::cout << x << std::endl
 #define LOG_e(x, y) std::cout << x << y
 #define NEWLINE() std::cout << std::endl;
