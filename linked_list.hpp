@@ -16,7 +16,7 @@ class LinkedList {
     public: 
         Node *first = NULL;
         Node *last = NULL;
-        LinkedList(std::initializer_list<int> vals) {
+        LinkedList(std::initializer_list<float> vals) {
             for (int i : vals) {
                 if (first == NULL) {
                     first = new Node(i);
