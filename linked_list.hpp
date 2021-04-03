@@ -34,6 +34,18 @@ class LinkedList {
             }
             return curr->val;
         }
+        int search(int val) {
+            Node *curr = first;
+            int index=0;
+            while (true) {
+                if (curr->val == val) {
+                    return index;
+                }
+                curr = curr->next;
+                index++;
+            }
+            return -1;
+        }
         int len() {
             Node *curr = first;
             int len = 1;
@@ -50,6 +62,13 @@ class LinkedList {
                 curr = curr->next;
             }
             LOG(curr->val);
+        }
+        void change(int index, int val) {
+            Node *curr = first;
+            for (int i=0;i<index;i++) {
+                curr = curr->next;
+            }
+            curr->val = val;
         }
         void append(int val) {
             Node *newNode = new Node(val);
@@ -82,8 +101,7 @@ class LinkedList {
                 } else if (curr->next == NULL) {
                     curr->next = prev;
                     break;
-                } 
-                else {
+                } else {
                     len++;
                     next = curr->next;
                     curr->next = prev;
